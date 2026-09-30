@@ -1,4 +1,4 @@
-def conquer(nums, low,mid, high):
+def merge_sort(nums, low,mid, high):
     temp = []
     left, right = low , mid+1
     #two pointer "9", 14<-mid  |  "15"<-mid+1 , 12
@@ -30,13 +30,13 @@ def conquer(nums, low,mid, high):
     # print(nums)
     
 
-def divide_nums(nums, start, end):
+def merge(nums, start, end):
     mid =  (start+end) // 2
     if(start >= end):
         return
-    divide_nums(nums, start, mid)
-    divide_nums(nums, mid+1, end)
-    conquer(nums,start ,mid,end)
+    merge(nums, start, mid)
+    merge(nums, mid+1, end)
+    merge_sort(nums,start ,mid,end)
     # print(nums)
 
 
